@@ -7,7 +7,6 @@ import {
 } from 'firebase/auth';
 import firebase_app from '@/firebase/config';
 import { AuthContextType } from './type';
-import { toast } from 'react-toastify';
 
 const auth = getAuth(firebase_app);
 

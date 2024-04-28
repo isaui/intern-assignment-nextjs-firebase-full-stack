@@ -8,3 +8,11 @@ export interface ITextField{
     readonly: boolean,
     isNumber?: boolean
 }
+
+export interface ITextArea{
+    textfieldKey: string
+    placeholder?: string
+    onChangeValue: (text:string) => void
+    value: string,
+    readonly: boolean
+}
