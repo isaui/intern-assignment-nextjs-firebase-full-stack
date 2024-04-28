@@ -7,6 +7,7 @@ import {
 } from 'firebase/auth';
 import firebase_app from '@/firebase/config';
 import { AuthContextType } from './type';
+import { toast } from 'react-toastify';
 
 const auth = getAuth(firebase_app);
 
@@ -18,6 +19,7 @@ export const AuthProvider: React.FC<{children: ReactNode}> = ({ children }) => {
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
           if (user) {
+              
               setUser(user);
           } else {
               setUser(null);

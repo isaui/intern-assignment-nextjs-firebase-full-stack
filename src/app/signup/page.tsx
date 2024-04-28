@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { BiUserCircle } from "react-icons/bi";
 import { CgPassword } from "react-icons/cg";
 import TextField from "../component/elements/TextField";
+import { toast } from "react-toastify";
 
 function Page() {
     const [email, setEmail] = React.useState('')
@@ -16,8 +17,9 @@ function Page() {
         const { result, error } = await signUp(email, password);
 
         if (error) {
-            return console.log(error)
+            return toast.error("email or password is empty")
         }
+        toast.success("successfully sign up as "+ email)
 
         // else successful
         console.log(result)
