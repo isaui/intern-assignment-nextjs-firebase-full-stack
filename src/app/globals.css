@@ -31,3 +31,13 @@ body {
     text-wrap: balance;
   }
 }
+
+.auth-popup-btn{
+  background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%);
+  transition: 0.5s; 
+  background-size: 200% auto;
+}
+.auth-popup-btn:hover{
+  background-position: right center; 
+  text-decoration: none;
+}
