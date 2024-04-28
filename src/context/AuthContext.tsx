@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactNode, useContext, useEffect, useState } from 'react';
 import {
     onAuthStateChanged,
     getAuth,
@@ -31,4 +31,12 @@ export const AuthProvider: React.FC<{children: ReactNode}> = ({ children }) => {
         {children}
       </AuthContext.Provider>
     );
+};
+
+export const useAuth = (): AuthContextType => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useSidebar must be used within a Auth Provider');
+  }
+  return context;
 };
